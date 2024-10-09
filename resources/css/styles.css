@@ -21,6 +21,7 @@
     display: flex;
     list-style: none;
     justify-content: space-around;
+    align-items: center;
   }
   .nav-links li a {
     color: white;
@@ -89,5 +90,58 @@
     .cta-button {
       font-size: 1em;
       padding: 8px 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+
+    /* Stack the nav-links */
+    .nav-links {
+      flex-direction: column;
+    }
+  
+    /* Center the logo */
+    .logo {
+      display: flex;
+      justify-content: center;
+      margin:0;
+    }
+  
+    /* Separate the text from the background image */
+    .hero {
+      background-image: none; /* Remove background image on small screens */
+      background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+
+      padding: 40px 20px;
+      height: auto;
+    }
+  
+    /* Reintroduce the background image below the text */
+    .hero::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 300px; /* Adjust height for mobile image */
+      background-image: url('../images/team.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      margin-top: 20px;
+    }
+  
+    /* Adjust text sizes for mobile */
+    .hero h1 {
+      font-size: 2rem;
+      padding: 20px;
+    }
+  
+    .hero p {
+      font-size: 1.5rem;
+      padding: 10px;
+    }
+  
+    .cta-button {
+      font-size: 1rem;
+      padding: 8px 20px;
     }
   }
